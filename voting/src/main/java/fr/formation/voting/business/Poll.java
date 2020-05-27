@@ -18,10 +18,10 @@ public class Poll extends AbstractEntity {
     @Column(name = "date", nullable = false, unique = true)
     private LocalDate date;
 
-    @Column(name = "round", nullable = false)
+    @Column(name = "round", nullable = false, columnDefinition = "INT UNSIGNED")
     private int round;
 
-    @Column(name = "year_of_election", nullable = false)
+    @Column(name = "year_of_election", nullable = false, columnDefinition = "INT UNSIGNED")
     private int yearOfElection;
 
     public Poll() {
