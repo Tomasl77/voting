@@ -15,7 +15,7 @@ import lombok.Setter;
 @Table(name = "polls")
 public class Poll extends AbstractEntity {
 
-    @Column(name = "date", nullable = false, unique = true)
+    @Column(name = "date", nullable = false)
     private LocalDate date;
 
     @Column(name = "round", nullable = false, columnDefinition = "INT UNSIGNED")

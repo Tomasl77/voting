@@ -14,15 +14,15 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "poll_station", indexes = {
+@Table(name = "poll_stations", indexes = {
         @Index(name = "IDX_poll_station_adress_id", columnList = "adress_id") })
 public class PollStation extends AbstractEntity {
 
-    @JoinColumn(name = "adress_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_poll_station_adress_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "adress_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_poll_stations_adress_id"))
     @OneToOne
     private Adress adress;
 
-    @Column(name = "cote_office_number", nullable = false, columnDefinition = "INT UNSIGNED")
+    @Column(name = "vote_office_number", nullable = false, columnDefinition = "INT UNSIGNED")
     private int voteOfficeNumber;
 
     public PollStation() {

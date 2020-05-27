@@ -26,7 +26,7 @@ public class Adress extends AbstractEntity {
 
     // @JoinColumn(name = "town_id", referencedColumnName = "id")
     // nom de la colonne dans la base, nom de la colonne qu'on veut referencer
-    @JoinColumn(name = "town_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_adresses_town_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "town_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_adresses_town_id"))
     @ManyToOne
     private Town town;
 

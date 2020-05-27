@@ -27,25 +27,25 @@ public class Elector extends AbstractEntity {
     @Column(name = "birthdate", nullable = false)
     private LocalDate birthdate;
 
-    @Column(name = "oreder_on_list", nullable = false, columnDefinition = "INT UNSIGNED")
+    @Column(name = "order_on_list", nullable = false, columnDefinition = "INT UNSIGNED")
     private int orderOnList;
 
     @Column(name = "elector_national_number", nullable = false, unique = true, columnDefinition = "INT UNSIGNED")
     private int electorNationalNumber;
 
-    @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_person_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_person_id"))
     @OneToOne
     private Person person;
 
-    @JoinColumn(name = "living_place_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_livaing_place_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "living_place_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_livaing_place_id"))
     @ManyToOne
     private Adress adress;
 
-    @JoinColumn(name = "place_of_birth_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_place_of_birth_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "place_of_birth_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_place_of_birth_id"))
     @ManyToOne
     private Town town;
 
-    @JoinColumn(name = "poll_station_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_poll_station_id"), columnDefinition = "INT UNSIGNED")
+    @JoinColumn(name = "poll_station_id", referencedColumnName = "id", nullable = false, foreignKey = @ForeignKey(name = "FK_electors_poll_station_id"))
     @ManyToOne
     private PollStation pollStation;
 
