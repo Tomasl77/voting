@@ -3,7 +3,6 @@ package fr.formation.voting.business;
 import javax.persistence.Entity;
 import javax.persistence.Index;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,11 +21,11 @@ public class Vote extends AbstractEntity {
     private Poll poll;
 
     @JoinColumn(name = "elector_id", nullable = false)
-    @ManyToMany
+    @ManyToOne
     private Elector elector;
 
     @JoinColumn(name = "candidate_id", nullable = false)
-    @ManyToMany
+    @ManyToOne
     private Candidate candidate;
 
     protected Vote() {

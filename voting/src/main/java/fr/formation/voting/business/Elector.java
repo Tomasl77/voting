@@ -28,10 +28,11 @@ public class Elector extends AbstractEntity {
     private int electorNationalNumber;
 
     @JoinColumn(name = "person_id", referencedColumnName = "id", nullable = false)
+    @OneToOne
     private Person person;
 
     @JoinColumn(name = "living_place_id", referencedColumnName = "id", nullable = false)
-    @OneToOne
+    @ManyToOne
     private Adress adress;
 
     @JoinColumn(name = "place_of_birth_id", referencedColumnName = "id", nullable = false)
