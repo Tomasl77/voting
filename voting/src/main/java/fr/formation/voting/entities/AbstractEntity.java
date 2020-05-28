@@ -1,4 +1,4 @@
-package fr.formation.voting.business;
+package fr.formation.voting.entities;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
